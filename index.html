@@ -2,9 +2,14 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Repositorio</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
   font-family: Arial, sans-serif;
   background:#f4f6f9;
@@ -14,8 +19,38 @@ body{
 header{
   background:#003366;
   color:white;
-  text-align:center;
   padding:20px;
+  position:relative;
+  text-align:center;
+}
+
+.logo{
+  position:absolute;
+  top:15px;
+  width:80px;
+  height:80px;
+  object-fit:contain;
+  background:white;
+  border-radius:10px;
+  padding:5px;
+}
+
+.logo-izq{
+  left:20px;
+}
+
+.logo-der{
+  right:20px;
+}
+
+header h1{
+  margin:0;
+  font-size:32px;
+}
+
+header p{
+  margin:8px 0 0;
+  font-size:18px;
 }
 
 .contenedor{
@@ -85,14 +120,98 @@ iframe{
   text-align:center;
   box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
+
+footer{
+  background:#003366;
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+
+/* Adaptación para tablet */
+@media(max-width:900px){
+  .contenedor{
+    flex-direction:column;
+  }
+
+  .menu{
+    width:100%;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .menu button{
+    min-width:140px;
+    margin-bottom:0;
+  }
+
+  iframe{
+    height:65vh;
+  }
+}
+
+/* Adaptación para celular */
+@media(max-width:600px){
+  header{
+    padding:90px 15px 20px;
+  }
+
+  .logo{
+    width:65px;
+    height:65px;
+    top:15px;
+  }
+
+  .logo-izq{
+    left:15px;
+  }
+
+  .logo-der{
+    right:15px;
+  }
+
+  header h1{
+    font-size:24px;
+  }
+
+  header p{
+    font-size:15px;
+  }
+
+  .visualizador{
+    padding:15px;
+  }
+
+  .bloque-material{
+    padding:12px;
+  }
+
+  iframe{
+    height:55vh;
+  }
+
+  footer{
+    font-size:12px;
+    padding:12px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Repositorio</h1>
-  <p>Diagnósticos Energéticos</p>
+  <img src="logo-izquierdo.png" class="logo logo-izq" alt="Logo izquierdo">
+
+  <div>
+    <h1>Repositorio</h1>
+    <p>Diagnósticos Energéticos</p>
+  </div>
+
+  <img src="logo-derecho.png" class="logo logo-der" alt="Logo derecho">
 </header>
 
 <div class="contenedor">
@@ -107,6 +226,10 @@ iframe{
   </div>
 
 </div>
+
+<footer>
+  Universidad Tecnológica de La Laguna Durango | TSU Energía Turbo - Solar
+</footer>
 
 <script>
 const unidades = [
